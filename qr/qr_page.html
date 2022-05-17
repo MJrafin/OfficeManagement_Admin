@@ -17,12 +17,14 @@
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-
-
        <script type="text/javascript" src="jquery.min.js"></script>
         <script type="text/javascript" src="qrcode.js"></script>
    
-   
+        <script> 
+            $(function(){
+              $("#header").load("header.html"); 
+            });
+        </script>
    <style>
 
        .center{
@@ -55,11 +57,10 @@
 
 </head>
 <body>
+
+    <div class="no-print" id="header"></div>
     
     <div class="container pt-5">
-
-       
-        
         <div class="center">
             <h3 class="text-center pt-5 pb-5" style="text-decoration: underline;">Scan QR Code</h3>
             <div class="center" id="qrcode" style="width:300px; height:300px;"></div>
