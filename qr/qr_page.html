@@ -114,14 +114,14 @@
 
             $.ajax({
                     type: "get",
-                    url: 'https://officeattendance.autovisabooking.xyz/getQr',
+                    url: 'https://officeattendance.autovisabooking.xyz/api/getQr',
                     dataType: "json",
                     success: function (response) {
                         console.log(response);
                         var qrcode = new QRCode(document.getElementById("qrcode"), {
                         width : 300,
                         height : 300,
-                        text: "https://accelerating-intelligence.com/",
+                        text: response.text,
                     });
                     
                     function makeCode () {		
