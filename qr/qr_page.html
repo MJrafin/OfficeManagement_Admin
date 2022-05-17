@@ -78,7 +78,7 @@
     </div>
 
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var qrcode = new QRCode(document.getElementById("qrcode"), {
             width : 300,
             height : 300,
@@ -108,9 +108,9 @@
                     makeCode();
                 }
             });
-        </script>
+        </script> -->
         
-        <!-- <script type="text/javascript">
+        <script type="text/javascript">
 
             $.ajax({
                     type: "get",
@@ -118,42 +118,42 @@
                     dataType: "json",
                     success: function (response) {
                         console.log(response);
-                    //     var qrcode = new QRCode(document.getElementById("qrcode"), {
-                    //     width : 300,
-                    //     height : 300,
-                    //     text: "https://accelerating-intelligence.com/",
-                    // });
+                        var qrcode = new QRCode(document.getElementById("qrcode"), {
+                        width : 300,
+                        height : 300,
+                        text: "https://accelerating-intelligence.com/",
+                    });
                     
-                    // function makeCode () {		
-                    //     var elText = document.getElementById("text");
+                    function makeCode () {		
+                        var elText = document.getElementById("text");
                         
-                    //     if (!elText.value) {
-                    //         alert("Input a text");
-                    //         elText.focus();
-                    //         return;
-                    //     }
+                        if (!elText.value) {
+                            alert("Input a text");
+                            elText.focus();
+                            return;
+                        }
                         
-                    //     qrcode.makeCode(elText.value);
-                    // }
+                        qrcode.makeCode(elText.value);
+                    }
                     
-                    // makeCode();
+                    makeCode();
                     
-                    // $("#text").
-                    //     on("blur", function () {
-                    //         makeCode();
-                    //     }).
-                    //     on("keydown", function (e) {
-                    //         if (e.keyCode == 13) {
-                    //             makeCode();
-                    //         }
-                    //     });
+                    $("#text").
+                        on("blur", function () {
+                            makeCode();
+                        }).
+                        on("keydown", function (e) {
+                            if (e.keyCode == 13) {
+                                makeCode();
+                            }
+                        });
                     },
-                    error: function(response){ 
-                    alert(response);
-                 }
+                //     error: function(response){ 
+                //     alert(response);
+                //  }
                 });
                     
-                    </script> -->
+                    </script>
     
     
     
