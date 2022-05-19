@@ -42,9 +42,9 @@
         <div class="card bx-shadow p-3 mt-5">
             <h4 class="text-center pb-2">Settings</h4>
             
-            <div class="mt-3">
-                <h6>Network Name: <span class="text-dark">AcceleratingIntelligence</span></h6>
-                <h6>IP Address: <span class="text-dark">192.168.31.138</span></h6>
+            <div class="mt-3" id="settings">
+                <h6>Network Name: <span class="network text-dark"></span></h6>
+                <h6>IP Address: <span class="ip text-dark"></span></h6>
             </div>
             <div class="text-center pt-5 pb-3">
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#settingsModal" data-whatever="@mdo">Change Settings</button>
@@ -87,7 +87,26 @@
     </div>
  
 
-    
+    <script type="text/javascript">
+        $.ajax({
+                    type: "post",
+                    url: 'https://officeattendance.autovisabooking.xyz/api/getIpHost',
+                    data:{'id' : 1},
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        var settings = document.querySelector('#settings')
+                        var network = document.querySelector('.network')
+                        var ip = document.querySelector('.ip')
+                        network.innerHTML = response.host_name
+                        ip.innerHTML = response.ip
+                       console.log(network);
+                    
+                    }
+                  });
+                
+                    
+    </script>
     
 
 
